@@ -1,0 +1,18 @@
+.login-form{
+    border: 1px solid black;
+    width:  30%;
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap:  20px;
+    padding:  30px 20px;
+
+}
+.login-form>h1{
+    text-align:  center;
+}
+.login-form>input{
+    padding: 10px;
+    font-size: 15px;
+}

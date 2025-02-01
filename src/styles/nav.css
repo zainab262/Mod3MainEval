@@ -1,0 +1,14 @@
+.navbar{
+    background:linear-gradient(rgb(132, 187, 206),rgb(108, 108, 216));
+    color: white;
+    padding:  20px ;
+}.navbar>h2{
+    text-align:  center;
+}
+.nav-link{
+    text-decoration:  none;
+    margin: 20px;
+    font-size: 20px;
+    
+
+}
