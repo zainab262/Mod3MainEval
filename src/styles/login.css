@@ -1,5 +1,5 @@
 .login-form{
-    border: 1px solid black;
+    border: 2px solid rgb(154, 154, 228);
     width:  30%;
     margin: auto;
     margin-top: 4rem;
@@ -11,8 +11,17 @@
 }
 .login-form>h1{
     text-align:  center;
+    color: rgb(122, 122, 230);
 }
 .login-form>input{
     padding: 10px;
     font-size: 15px;
+    border: 2px solid rgb(154, 154, 228);
+
+}
+.login-btn{
+    color: rgb(97, 97, 192);
+    font-weight: 600;
+    font-size: 1.5rem;
+
 }

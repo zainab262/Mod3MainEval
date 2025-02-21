@@ -1,35 +1,27 @@
 import React, { createContext, useState } from 'react'
-export  let AuthContext=createContext()
+import { Navigate, useNavigate } from 'react-router-dom'
+export  const AuthContext=createContext()
 export default function AuthContextProvider({children}) {
+  let navigate=useNavigate()
+  let [isAuthenticated,setAuth]=useState(false)
+  let [token,setToken]=useState(null)
+  let login =(authToken)=>{
+    setAuth(true)
+    setToken(authToken)
+    // navigate("/quiz")
     
+  }
+  let logout=()=>{
+    setAuth(false)
+    setToken(null)
+    navigate("/")
+  }
 
-
-
-    let [username,setUsername]=useState()
-    let [password,setPassword]=useState()
-    let [token,setToken]=useState(false)
-    let handleSubmit=async(e)=>{
-        e.preventDefault()
-       try{
-        let res= await axios.post("https://simple-half-dew.glitch.me/login",{
-            username,password
-        })
-        if(res.data.success){
-            console.log(res.data.token)
-            let {token}=res.data
-            // login(token)
-            setToken(true)
-        }
-            
-        
-       }catch(err){
-        console.log(err.res.data.message)
-        // console.log(err)
-       }
-    }
+    
+  
   return (
     <div>
-      <AuthContextProvider.Provider value={token}>{children}</AuthContextProvider.Provider>
+      <AuthContext.Provider value={{login,token,isAuthenticated,logout}}>{children}</AuthContext.Provider>
     </div>
   )
 }

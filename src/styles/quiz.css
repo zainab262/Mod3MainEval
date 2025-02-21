@@ -1,9 +1,48 @@
+.heading{
+    text-align: center;
+    font-size: 2.5rem;
+    color:rgb(122, 122, 230) ;
+    
+
+}
 .quiz-card{
-    border:  1px solid black;
+    border:  2px solid  rgb(154, 154, 228);
     display:  flex ;
     flex-direction:  column;
     width: 40%;
     margin: 20px  auto;
     text-align: center;
-    padding:  20px;
+    padding:  10px;
 }
+.options{
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    /* gap: 3rem; */
+    font-size: 1.3rem;
+}
+.opt{
+    display: flex;
+    flex-direction:row ;
+    gap: 1rem;
+    margin: 10px ;
+    background-color: rgb(154, 154, 228);
+    padding:8px 0px;
+
+
+}
+.show-btn{
+    background-color:rgb(93, 93, 167) ;
+    border: none;
+    padding: 8px 0px ;
+    margin: 10px;
+    font-weight: 600;
+    font-size: 15px;
+
+
+}
+.showans{
+    font-size: 20px;
+}
+

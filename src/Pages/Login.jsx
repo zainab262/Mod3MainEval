@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import"../styles/login.css"
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
-// import AuthContextProvider from '../context/AuthContextProvider'
-
+import {AuthContext} from '../context/AuthContextProvider'
+import AuthContextProvider from '../context/AuthContextProvider'
+import Navbar from '../components/Navbar'
 export default function Login() {
     let [username,setUsername]=useState()
     let [password,setPassword]=useState()
     let navigate=useNavigate()
-    // let {login}=useContext(Authcontext)
+    let {login}=useContext(AuthContext)
     let handleSubmit=async(e)=>{
         e.preventDefault()
        try{
@@ -19,18 +20,23 @@ export default function Login() {
             console.log(res.data.token)
             navigate("/quiz")
             let {token}=res.data
-            // login(token)
+            login(token)
         }
             
         
        }catch(err){
-        console.log(err.res.data.message)
+        alert(err.response.data.message)
+        console.log(err.response.data.message)
+        
         // console.log(err)
        }
     }
     
   return (
+    <>
+    
     <form className='login-form' onSubmit={handleSubmit}>
+
       <h1>Login Form</h1>
       <input type='text' 
         name='username' 
@@ -49,8 +55,9 @@ export default function Login() {
         >
 
     </input>
-      <input type="submit"  value={"Login"} />
+      <input className='login-btn' type="submit"  value={"Login"} />
 
     </form>
+  </>  
   )
 }
